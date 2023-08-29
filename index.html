@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Include the stylesheet for styling -->
     <link rel="stylesheet" type="text/css" href="./style/styles.css">
-    <style>
-</style>
+    <!-- Include jQuery library -->
     <script  type="text/javascript" src="./jquery.js"></script>
-   
-   
 </head>
 <body>
+    <!-- Container for the extension content -->
     <div class="extension-container">
+        <!-- Extension icon -->
         <img src="./images/mylogo.png" alt="Extension Icon" class="icon">
         <br>
         
+        <!-- Message for successful text extraction -->
         <div id="extractMessage" style="display: none; color:green;font-weight: 400; text-align:center;padding: 5px;">Text Extracted!</div>
+        <!-- Button to trigger text extraction -->
         <button id="extractButton" class="btn">Extract Text</button>
-          
+        
+        <!-- Button to trigger text summarization -->
         <button id="check" class="btn">Summarize</button>
-
+        
+        <!-- Button to trigger text conversion to list -->
         <button id="convertToListBtn" class="btn" style="display: none;">Want Points</button> <!-- Added Convert button -->
         <br>
-        <button id="copySummaryButton" class="btn" style="display: none; ">Copy</button> <!-- Added Copy Summary button -->
-        <div id="copyMessage" style="display: none; color:green;font-size: 20px;; text-align:center;padding: 5px;">Text Copied!</div>
-       <br>
-        <h1 style="font-size: 20px;color:blue;">Text Will Apper here</h1>
-        <div id="output" ></div>
-        <p id="summarizedText" ></p>
 
+        <!-- Button to copy the summary -->
+        <button id="copySummaryButton" class="btn" style="display: none; ">Copy</button> <!-- Added Copy Summary button -->
+
+        <!-- Message for successful text copying -->
+        <div id="copyMessage" style="display: none; color:green; font-size: 20px; text-align:center;padding: 5px;">Text Copied!</div>
+        <br>
+
+        <!-- text  for the extracted/summarized text -->
+        <h1 style="font-size: 20px; color:blue;">Text  Will Appear Here</h1>
+
+        <!-- it is used to store the text that have been Stored after Text Extraction -->
+        <div id="output"></div>
+        
+         <!-- this is used  for the final Summarized text -->
+        <p id="summarizedText"></p>
     </div>
+    <!-- Include JavaScript files for functionality -->
     <script src="./summarize.js"></script>
-    <script src="./popup.js"> </script>
+    <script src="./popup.js"></script>
 </body>
 </html>
