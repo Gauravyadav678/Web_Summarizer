@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./style/styles.css">
+    <style>
+</style>
+    <script  type="text/javascript" src="./jquery.js"></script>
+   
+   
+</head>
+<body>
+    <div class="extension-container">
+        <img src="./images/mylogo.png" alt="Extension Icon" class="icon">
+        <br>
+        
+        <div id="extractMessage" style="display: none; color:green;font-weight: 400; text-align:center;padding: 5px;">Text Extracted!</div>
+        <button id="extractButton" class="btn">Extract Text</button>
+          
+        <button id="check" class="btn">Summarize</button>
+
+        <button id="convertToListBtn" class="btn" style="display: none;">Want Points</button> <!-- Added Convert button -->
+        <br>
+        <button id="copySummaryButton" class="btn" style="display: none; ">Copy</button> <!-- Added Copy Summary button -->
+        <div id="copyMessage" style="display: none; color:green;font-size: 20px;; text-align:center;padding: 5px;">Text Copied!</div>
+       <br>
+        <h1 style="font-size: 20px;color:blue;">Text Will Apper here</h1>
+        <div id="output" ></div>
+        <p id="summarizedText" ></p>
+
+    </div>
+    <script src="./summarize.js"></script>
+    <script src="./popup.js"> </script>
+</body>
+</html>

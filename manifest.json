@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "pta nahi kya bna hai",
+  "description": "it show the length of the text in prompt",
+  "version": "1.0",
+ 
+  "icons": {
+    "48": "./images/mylogo.png",
+    "96": "./images/mylogo.png"
+  },
+  
+ 
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  
+  "permissions": ["scripting", "activeTab", "tabs"],
+  
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+U",
+        "mac": "Command+U"
+      }
+    }
+  }
+  
+}
