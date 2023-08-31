@@ -9,10 +9,10 @@ this Repository is consisting the project that is basically a chrome extension t
 
 # How To use
 1. Clone this Repo to your System or Download the code from this Git Repository.
-2. for Exapme goto the Chrome browser.
+2. for Example goto the Chrome browser.
 3. Now goto in the Manage Extention section.
 4. Click Load Unpacked.
 5. Choose the foler where You keep the Project.
 6.  when it load pin it to your Browser.
 7.  Now click on the Extract Text.
-8.  After this it will show You other Btuton to Perform Operation.
+8.  After this it will show You other Button to Perform Operation.
