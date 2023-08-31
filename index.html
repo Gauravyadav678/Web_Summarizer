@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Include the stylesheet for styling -->
+    <!-- Link to external stylesheets -->
     <link rel="stylesheet" type="text/css" href="./style/styles.css">
+    <link rel="stylesheet" type="text/css" href="./style/overlays.css">
+  
     <!-- Include jQuery library -->
-    <script  type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src="./jquery.js"></script>
+    <style>
+       
+    </style>
 </head>
 <body>
-    <!-- Container for the extension content -->
+    <!-- Main container for the extension -->
     <div class="extension-container">
         <!-- Extension icon -->
         <img src="./images/mylogo.png" alt="Extension Icon" class="icon">
-        <br>
         
-        <!-- Message for successful text extraction -->
-        <div id="extractMessage" style="display: none; color:green;font-weight: 400; text-align:center;padding: 5px;">Text Extracted!</div>
-        <!-- Button to trigger text extraction -->
-        <button id="extractButton" class="btn">Extract Text</button>
+        <!-- Container 2 with a content area -->
+        <div class="container2" id="blur">
+            <div class="content" >
+                <!-- Button to initiate text extraction -->
+                <button id="extractButton" title="will extract text when click">Start here Extract</button>
+            </div>
+        </div>
         
-        <!-- Button to trigger text summarization -->
-        <button id="check" class="btn">Summarize</button>
-        
-        <!-- Button to trigger text conversion to list -->
-        <button id="convertToListBtn" class="btn" style="display: none;">Want Points</button> <!-- Added Convert button -->
-        <br>
-
-        <!-- Button to copy the summary -->
-        <button id="copySummaryButton" class="btn" style="display: none; ">Copy</button> <!-- Added Copy Summary button -->
-
-        <!-- Message for successful text copying -->
-        <div id="copyMessage" style="display: none; color:green; font-size: 20px; text-align:center;padding: 5px;">Text Copied!</div>
-        <br>
-
-        <!-- text  for the extracted/summarized text -->
-        <h1 style="font-size: 20px; color:blue;">Text  Will Appear Here</h1>
-
-        <!-- it is used to store the text that have been Stored after Text Extraction -->
-        <div id="output"></div>
-        
-         <!-- this is used  for the final Summarized text -->
-        <p id="summarizedText"></p>
+        <div>
+            <!-- Popup container for extracted text -->
+            <div id="popup">
+                <!-- Heading for extracted text -->
+                <h2 class="btn">Extracted text</h2>
+                <!-- Button to close the popup -->
+                <button btn>close</button>
+                <!-- Button to trigger summarization -->
+                <button id="check" class="btn">Summarize</button>
+                <!-- Button to convert to a list -->
+                <button id="convertToListBtn" style="display: none;" class="btn">Want Points</button>
+                <!-- Button to copy the summary -->
+                <button id="copySummaryButton" style="display: none; " class="btn">Copy</button>
+                <!-- Message displayed when text is copied -->
+                <div id="copyMessage" style="display: none; color:white; font-size: 15px; text-align:center; padding: 5px;">Text Copied!!</div>
+                <p id="pc"></p>
+            </div>
+        </div>
     </div>
-    <!-- Include JavaScript files for functionality -->
+   
+    <!-- Container for output -->
+    <div id="output"></div>
+    <!-- Container for summarized text -->
+    <p id="summarizedText"></p>
+   
+    <!-- Include external JavaScript files -->
     <script src="./summarize.js"></script>
     <script src="./popup.js"></script>
 </body>

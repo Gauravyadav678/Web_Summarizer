@@ -1,0 +1,87 @@
+/* Reset default styles for all elements */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+/* Styling for the main container */
+.container2 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    transition: 0.5s; /* Transition duration for smooth effects */
+    padding: 20px;
+}
+
+/* Styling for the content within container2 */
+.container2 .content {
+    position: relative;
+    max-width: 700px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the blurred container2 when active */
+.container2#blur.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Heading styles */
+h2 {
+    font-weight: 600;
+    color: yellow;
+}
+
+/* Styling for the popup */
+#popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-height: 100vh; /* Limit popup's height to viewport height */
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
+    background: #666666;
+    visibility: hidden; /* Initially hidden */
+    transition: 0.5s; /* Transition duration for smooth effects */
+    overflow: auto; /* Allow content scrolling if needed */
+}
+
+/* Styling for the active popup */
+#popup.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s; /* Transition duration for smooth effects */
+}
+
+/* Styling for buttons */
+button {
+    margin: 10px;
+    position: static;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 8px;
+    color: #fff;
+    background: darkblue;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    outline: none;
+}
+
+/* Styling for a bordered and scrollable container */
+#pc {
+    border: 4px solid cyan;
+    padding: 5px;
+    max-height: 200px;
+    overflow: auto;
+    background: #fff;
+}

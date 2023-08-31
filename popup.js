@@ -1,46 +1,55 @@
-// Wait for the DOM content to be fully loaded
+// wait for the document to laod
 document.addEventListener("DOMContentLoaded", function () {
-  // Get references to the necessary elements
   const extractButton = document.getElementById("extractButton");
   const summaryButton = document.getElementById("check");
   const outputDiv = document.getElementById("output");
-
-  // Clear the output div's content
-  outputDiv.textContent = "";
-
-  // Add event listener for the extract button
-  extractButton.addEventListener("click", async () => {
-    // Get the active tab
+  const blur = document.getElementById("blur");
+    const popup1 = document.getElementById("popup");
+    const extractButton1 = document.querySelector("#blur button");
+    const closeButton = popup1.querySelector("button");
+    const pc=document.getElementById("pc");
+    outputDiv.textContent = "";
+    extractButton.addEventListener("click", async () => {
+    
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-    // Extract text from the active tab
     const extractedText = await extractTextFromTab(tab.id);
-    
-    // Display the extracted text
-    outputDiv.textContent = extractedText;
-
-    // Enable the summary button
-    summaryButton.disabled = false;
-    
-    // Hide the extract button and show a success message
-    extractButton.style.display = "none";
+    pc.textContent=extractedText;
+    extractedTextContent.textContent=extractedText;
     showSuccessMessage("Text Extracted!");
+    extractedTextContent.style.display = "block";
+ 
+    summaryButton.disabled = false;
+    outputDiv.textContent ="none";
+
+    
   });
+
+   extractButton1.addEventListener("click", function () {
+    // Toggle the visibility of blur and popup1
+    blur.classList.toggle("active");
+    popup1.classList.toggle("active");
+   });
+
+  closeButton.addEventListener("click", function () {
+    // Toggle the visibility of blur and popup1
+    blur.classList.toggle("active");
+    popup1.classList.toggle("active");
+  });
+
 
   // Add event listener for the summary button
   summaryButton.addEventListener("click", async () => {
-    // Get the extracted text
-    const extractedText = outputDiv.textContent;
-
-    // Generate a summary for the extracted text
-    const summarizedText = await generateSummary(extractedText);
-
-    // Display the summarized text
+    const extractedText = extractedTextContent.textContent;
+    const summarizedText = extractedText;
     outputDiv.textContent = summarizedText;
+ 
+    extractedTextContent.style.display = "none";
+
+    // Show the output div
+    outputDiv.style.display = "block";
   });
 });
 
-// Function to extract text from a tab using content scripts
 async function extractTextFromTab(tabId) {
   return new Promise(resolve => {
     chrome.scripting.executeScript(
@@ -56,12 +65,14 @@ async function extractTextFromTab(tabId) {
   });
 }
 
-// Content script function to extract text from the DOM
 const extractTextFunction = () => {
   return document.body.innerText;
 };
 
-// Utility function to show a success message
+
+
+
+// Utility function to show success message
 function showSuccessMessage(message) {
   const messageElement = document.getElementById('copyMessage');
   messageElement.textContent = message;
@@ -71,21 +82,24 @@ function showSuccessMessage(message) {
   }, 2000); // Hide message after 2 seconds
 }
 
-// Get a reference to the "Copy Summary" button
+
 const copySummaryButton = document.getElementById("copySummaryButton");
-
-// Add event listener for the "Copy Summary" button
 copySummaryButton.addEventListener("click", async () => {
-  // Get the summarized text
-  const summarizedText = $('p').text(); 
-
+  const summarizedText = $('#pc').text(); 
   try {
-    // Copy the summarized text to the clipboard
     await navigator.clipboard.writeText(summarizedText);
-
-    // Show a copy success message
-    showSuccessMessage("Summary Copied!");
+    // Show copy success message
+    showSuccessMessage("Copy To Clipboard!");
   } catch (error) {
     console.error("Copying failed:", error);
   }
 });
+
+
+
+
+
+
+
+
+
