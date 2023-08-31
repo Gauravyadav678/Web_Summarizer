@@ -2,10 +2,10 @@
 this Repository is consisting the project that is basically a chrome extension to Summarize the Web page
 
 # System Requirements
-1 modern System 
-2 Window 10 and Above 
-3 Support Browser ,chrome Edge , firebox
-4 4Gb ram and Above
+1 modern System.
+2 Window 10 and Above. 
+3 Support Browser ,chrome Edge , firebox.
+4 4Gb ram and Above.
 
 # How To use
 1. Clone this Repo to your System or Download the code from this Git Repository.
