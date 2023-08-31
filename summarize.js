@@ -87,9 +87,10 @@ $("#check").click(function () {
         .slice(0, selectedLength);
 
     // Check if enough sentences are selected for the summary
-    if (summarySentences.length >= 3) { // Change the condition to 2
+    if (summarySentences.length >= 2) { // Change the condition to 2
+        const summarizedParagraph = `<p>${summarySentences.join(" ")}</p>`;
         // Display the summary sentences
-        $('#pc').html(summarySentences.join(" "));
+        $('#pc').html(summarizedParagraph);
         // Show the button to convert to bullet points
         $('#convertToListBtn').show();
         // Enable and show the Copy Summary button
